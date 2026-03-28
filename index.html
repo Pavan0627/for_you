@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You Oviii 💖</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&family=Dancing+Script:wght@600;700&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <div class="hearts-container" id="heartsContainer"></div>
+
+  <!-- 🎵 Music file from songs folder -->
+  <audio id="bgMusic" loop>
+    <source src="songs/ovii.mpeg" type="audio/mpeg" />
+  </audio>
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎵</button>
+
+  <!-- ================================================
+       PAGE 1 — LANDING
+  ================================================ -->
+  <section class="page active" id="page1">
+    <div class="stars"></div>
+    <div class="page-content center-content fade-in">
+      <div class="flower-top">🌸 🌷 🌸</div>
+      <p class="small-text">made with love, just for you</p>
+      <h1 class="big-name">Hi, <span class="highlight-name">Oviii</span> 💖</h1>
+      <p class="tagline">Something special is waiting inside...</p>
+
+      <div class="password-container">
+        <input type="password" id="passInput" class="password-input" placeholder="Enter magical words..."
+          onkeypress="handlePassKey(event)">
+        <p id="passError" class="password-error"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       PAGE 2 — FUNNY QUESTION
+  ================================================ -->
+  <section class="page" id="page2">
+    <div class="page-content center-content fade-in">
+      <div class="emoji-big">😋</div>
+      <h2 class="section-title">Can I show you something special?</h2>
+      <p class="sub-text">I worked really hard on this... just for you 💝</p>
+      <div class="btn-group">
+        <button class="main-btn yes-btn" onclick="goTo('page3')">Yes of course! 💖</button>
+        <button class="main-btn no-btn" id="noBtn" onmouseover="moveNoBtn()" onclick="moveNoBtn()">No 😈</button>
+      </div>
+      <p class="funny-text" id="funnyText"></p>
+    </div>
+  </section>
+
+  <!-- ================================================
+       PAGE 3 — HOW WE MET
+  ================================================ -->
+  <section class="page" id="page3">
+    <div class="page-content scroll-content fade-in">
+      <h2 class="section-title">How It All Started 💬</h2>
+
+      <div class="meet-header">
+        <div class="meet-badge">
+          <span class="meet-badge-icon">📅</span>
+          <div>
+            <div class="meet-badge-label">The Day</div>
+            <div class="meet-badge-value">6 January, 2023</div>
+          </div>
+        </div>
+        <div class="meet-badge">
+          <span class="meet-badge-icon">📍</span>
+          <div>
+            <div class="meet-badge-label">Where</div>
+            <div class="meet-badge-value">Basketball Court 🏀</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="meet-vibe">"The day everything changed..."</p>
+
+      <div class="chat-window">
+        <div class="chat-header">
+          <div class="chat-avatar">💖</div>
+          <div>
+            <div class="chat-name">Oviii</div>
+            <div class="chat-status">● online</div>
+          </div>
+        </div>
+
+        <div class="chat-body" id="chatBody">
+          <div class="chat-msg me hidden-chat">Hey... what's your name? 😅</div>
+          <div class="chat-msg them hidden-chat">I'm Oviii. Why? 😊</div>
+          <div class="chat-msg me hidden-chat">Nothing, just wanted to say you play really good basketball! 🏀✨</div>
+          <div class="chat-msg them hidden-chat">Haha thank you! That's sweet of you to notice 🙈</div>
+          <div class="chat-time hidden-chat">— after the game, walking home —</div>
+          <div class="chat-msg me hidden-chat">Wait, you're leaving now too?</div>
+          <div class="chat-msg them hidden-chat">Yeah, I'm heading home. You?</div>
+          <div class="chat-msg me hidden-chat">Yes, me too! I'm heading towards Erandwane.</div>
+          <div class="chat-msg them hidden-chat">Wait, me too! 😮 That's exactly where I'm going.</div>
+          <div class="chat-msg me hidden-chat">No way! Looks like we'll be leaving at the same time every day then? 😊
+          </div>
+          <div class="chat-msg them hidden-chat">I guess we will! That's actually great 😄✨</div>
+        </div>
+      </div>
+
+      <div class="meet-feeling">
+        <p> From those daily talks on the bike to asking about each other's birthdays and finding out we're both
+          same-month babies... 🌙 Everything felt so natural. I still remember how happy you looked when we realized
+          we'd
+          be leaving together every day. 😂💖</p>
+      </div>
+
+      <div class="nav-btn-wrap">
+        <button class="main-btn hidden" id="chatContinueBtn" onclick="goTo('page4')">Continue Our Story 🌸</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       PAGE 4 — RELATIONSHIP JOURNEY
+  ================================================ -->
+  <section class="page" id="page4">
+    <div class="page-content scroll-content fade-in">
+      <h2 class="section-title">Our Journey 🌙</h2>
+      <p class="sub-text">Every moment that brought us here</p>
+
+      <div class="journey-container">
+        <!-- Item 1 -->
+        <div class="journey-item">
+          <div class="journey-dot"></div>
+          <div class="journey-content">
+            <span class="journey-time">The First Spark 🏀</span>
+            <h3 class="journey-title">January 2023</h3>
+            <p class="journey-text">It all started at the basketball court. From those first glances to the daily bike
+              rides home together, I knew something special was beginning.</p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="journey-item">
+          <div class="journey-dot"></div>
+          <div class="journey-content">
+            <span class="journey-time">Building Our Bond</span>
+            <h3 class="journey-title">Endless Conversations 📱</h3>
+            <p class="journey-text">Daily talks that never ended—on phone calls, texts, Insta, and Snap. We started
+              sharing everything, even studying together, making every mundane moment feel magical.</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="journey-item">
+          <div class="journey-dot"></div>
+          <div class="journey-content">
+            <span class="journey-time">Visapur & Hampta Pass 🏔️</span>
+            <h3 class="journey-title">Adventures treks and Trips</h3>
+            <p class="journey-text">Our first trek to Visapur with friends was just the start. But Hampta Pass...
+              staying in tents, talking under the endless sky—that's where our souls truly connected.</p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="journey-item">
+          <div class="journey-dot"></div>
+          <div class="journey-content">
+            <span class="journey-time">Traditions & Joy</span>
+            <h3 class="journey-title">Festivals & Celebrations 🌸</h3>
+            <p class="journey-text">Celebrating every festival together, from the lights of Diwali to our birthdays.
+              These moments of pure joy and shared traditions have become the heartbeat of our relationship.</p>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="journey-item">
+          <div class="journey-dot"></div>
+          <div class="journey-content">
+            <span class="journey-time">Daily Rituals</span>
+            <h3 class="journey-title">The College Runs 🏍️</h3>
+            <p class="journey-text">Those daily pick-and-drop rides to college... they might seem small to others, but
+              for me, they were the best parts of my day. Just you, me, and the road.</p>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="journey-item">
+          <div class="journey-dot"></div>
+          <div class="journey-content">
+            <span class="journey-time">Ambition & Support</span>
+            <h3 class="journey-title">Career & Growth 💼</h3>
+            <p class="journey-text">Even as I dove into my career and things got busy, we never let it pull us apart. We
+              managed every challenge, supporting each other's dreams while keeping our love the priority.</p>
+          </div>
+        </div>
+
+        <!-- Item 7 -->
+        <div class="journey-item">
+          <div class="journey-dot"></div>
+          <div class="journey-content">
+            <span class="journey-time">Through Thick & Thin ⛈️</span>
+            <h3 class="journey-title">The Challenges</h3>
+            <p class="journey-text">We've had our ups and downs, the breakups, and the misunderstandings. But they only
+              showed us how much we truly mean to each other.</p>
+          </div>
+        </div>
+
+        <!-- Item 8 -->
+        <div class="journey-item">
+          <div class="journey-dot"></div>
+          <div class="journey-content">
+            <span class="journey-time">March New Beginning ✨</span>
+            <h3 class="journey-title">A Beautiful New Start</h3>
+            <p class="journey-text">A fresh beginning, a stronger promise. From this day on, we decided to leave the
+              past behind and build a future that's even more beautiful.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-btn-wrap">
+        <button class="main-btn" onclick="goTo('page6')">Now just you 🌸</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       PAGE 6 — JUST YOU (ANIMATED)
+  ================================================ -->
+  <section class="page" id="page6">
+    <div class="page-content center-content fade-in">
+      <h2 class="section-title">Just You 🌷</h2>
+      <p class="sub-text">The most beautiful person I know</p>
+
+      <div class="gallery-nav-container">
+        <button class="nav-arrow prev-arrow" onclick="showPrevHerPhoto()">←</button>
+        <div class="her-animation-container" id="herAnimationContainer">
+          <!-- Content will be injected by JS -->
+        </div>
+        <button class="nav-arrow next-arrow" onclick="showNextHerPhoto()">→</button>
+      </div>
+
+      <div class="nav-btn-wrap" style="margin-top: 20px;">
+        <button class="main-btn hidden" id="toUsBtn" onclick="goTo('page7')">A Little Thought 💭</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       PAGE 7 — QUOTES (Now between Just You and Us)
+  ================================================ -->
+  <section class="page" id="page7">
+    <div class="page-content scroll-content fade-in">
+      <h2 class="section-title">Things I Feel 💭</h2>
+      <p class="sub-text">When I can't find words, these say it for me</p>
+
+      <div class="quote-overlay" id="quoteOverlay"></div>
+
+      <div class="quotes-container-323">
+        <!-- Row 1: 3 quotes -->
+        <div class="quote-row">
+          <div class="quote-card small" onclick="zoomQuote(this)">
+            <p>"You are my today and all of my tomorrows." ☀️</p>
+          </div>
+          <div class="quote-card big" onclick="zoomQuote(this)">
+            <p>"In your smile, I see something more beautiful than the stars." ✨</p>
+          </div>
+          <div class="quote-card small" onclick="zoomQuote(this)">
+            <p>"My heart is, and always will be, yours." ❤️</p>
+          </div>
+        </div>
+        <!-- Row 2: 2 quotes -->
+        <div class="quote-row">
+          <div class="quote-card big" onclick="zoomQuote(this)">
+            <p>"You're the best thing that ever happened to me, and I'm never letting go." 🔒💖</p>
+          </div>
+          <div class="quote-card small" onclick="zoomQuote(this)">
+            <p>"To the world you may be one person, but to me you are the world." 🌍</p>
+          </div>
+        </div>
+        <!-- Row 3: 3 quotes -->
+        <div class="quote-row">
+          <div class="quote-card small" onclick="zoomQuote(this)">
+            <p>"I love you more than words can ever express." 🌸</p>
+          </div>
+          <div class="quote-card big" onclick="zoomQuote(this)">
+            <p>"Every love story is beautiful, but ours is my favorite." 📖💕</p>
+          </div>
+          <div class="quote-card small" onclick="zoomQuote(this)">
+            <p>"You make me want to be a better person every single day." 🌷</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-btn-wrap">
+        <button class="main-btn" onclick="goTo('page5')">Us Together 📸</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       PAGE 5 — US TOGETHER (GRID VIEW)
+  ================================================ -->
+  <section class="page" id="page5">
+    <div class="page-content scroll-content fade-in">
+      <h2 class="section-title">Us, Together 🫶</h2>
+      <p class="sub-text">Every photo tells our story. Click one to see the memory...</p>
+
+      <div class="us-grid-container" id="usGridContainer">
+        <!-- Grid of photos will be injected by JS -->
+      </div>
+
+      <div class="nav-btn-wrap" style="margin-top: 40px;">
+        <button class="main-btn" id="toFeelingsBtn" onclick="goTo('page9')">Our Journey ⏳</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Memory Zoom Modal -->
+  <div class="memory-modal" id="memoryModal">
+    <button class="modal-close" onclick="closeMemory()">✕</button>
+    <div class="modal-content">
+      <div class="modal-image-wrap">
+        <img id="modalImg" src="" alt="Memory">
+      </div>
+      <div class="modal-text-wrap">
+        <h3 id="modalWord" class="modal-word"></h3>
+        <p id="modalLine" class="modal-line"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================
+       PAGE 9 — PRECISION COUNTER
+  ================================================ -->
+  <section class="page" id="page9">
+    <div class="page-content center-content fade-in">
+      <div class="final-hearts">💖💕💗💓💞</div>
+      <h1 class="love-message">Our Time Together</h1>
+      <h2 class="love-sub">Since 6th January 2023 🌸</h2>
+
+      <div class="precision-counter">
+        <div class="counter-unit">
+          <div class="unit-value" id="days">0</div>
+          <div class="unit-label">Days</div>
+        </div>
+        <div class="counter-unit">
+          <div class="unit-value" id="hours">0</div>
+          <div class="unit-label">Hrs</div>
+        </div>
+        <div class="counter-unit">
+          <div class="unit-value" id="minutes">0</div>
+          <div class="unit-label">Min</div>
+        </div>
+        <div class="counter-unit">
+          <div class="unit-value" id="seconds">0</div>
+          <div class="unit-label">Sec</div>
+        </div>
+      </div>
+
+      <div class="final-quote">
+        <p>"Every second with you counts... and I count every second with you."</p>
+      </div>
+
+      <button class="main-btn" onclick="goTo('page8')">Next 🌸</button>
+    </div>
+  </section>
+
+  <!-- ================================================
+       PAGE 8 — BIRTHDAY WISHES
+  ================================================ -->
+  <section class="page" id="page8">
+    <div class="page-content center-content fade-in">
+      <div class="emoji-big">🎂</div>
+      <h2 class="section-title">Happy Birthday, Ovaaa! 🥳💖</h2>
+      <div class="birthday-card">
+        <div class="birthday-msg-animated" id="birthdayMsg">
+          <span class="birthday-line">Happy Birthday to my world, my happiness, and my everything. 🌸</span>
+          <span class="birthday-line">You make every day feel like a dream, and I'm so lucky to have you. ✨</span>
+          <span class="birthday-line">You're my favorite human, my best friend, and my whole heart. 💖</span>
+          <span class="birthday-line">Here's to us, today and forever. I love you more than words can ever say!
+            ♾️</span>
+        </div>
+      </div>
+      <div class="nav-btn-wrap" style="margin-top: 30px;">
+        <button class="main-btn" onclick="goTo('page10')">A final question... 🥺</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       PAGE 10 — FINAL PAGE & REVEAL
+  ================================================ -->
+  <section class="page" id="page10">
+    <!-- Part 1: The Childish Question -->
+    <div id="finalQuestion" class="page-content center-content fade-in">
+      <div class="emoji-big">🥺</div>
+      <h2 class="section-title">One last thing...</h2>
+      <p class="sub-text" style="max-width: 500px; margin: 0 auto 30px;">
+        Will you be okay being this childish with me forever? 🧸<br>
+        And will you still love me even when I make you mad and you get all gussa? 😤❤️
+      </p>
+      <div class="btn-group">
+        <button class="main-btn yes-btn" onclick="finalReveal()">Yes, I will! ❤️</button>
+        <button class="main-btn no-btn" id="noBtn3" onmouseover="moveNoBtn3()" onclick="moveNoBtn3()">No way!
+          😜</button>
+      </div>
+    </div>
+    <!-- Part 2: The Final Reveal -->
+    <div id="finalRevealContent" class="page-content center-content hidden">
+      <div class="couple-doodle">
+        <img src="images/us/ghiblii 1.png" alt="couple doodle" style="width: 250px; height: auto; border-radius: 15px;">
+      </div>
+      <h1 class="love-message-animate">I love you my oviiaa (dudu) ❤️</h1>
+      <div class="love-sub-animate">
+        <p>Always & Alot 💖</p>
+      </div>
+      <div class="final-smile">😊✨</div>
+      <button class="main-btn" style="margin-top: 40px;" onclick="goTo('page1')">From the beginning 🔄</button>
+    </div>
+  </section>
+
+  <div id="confettiOverlay" class="confetti-overlay hidden"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>
